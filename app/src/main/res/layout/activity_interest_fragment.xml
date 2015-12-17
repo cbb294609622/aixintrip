@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <net.aixin.app.widget.PredicateLayout
+        android:id="@+id/predicate_add_view"
+        android:layout_width="match_parent"
+        android:layout_margin="60dp"
+        android:layout_height="wrap_content">
+
+    </net.aixin.app.widget.PredicateLayout>
+    <TextView
+        android:id="@+id/tv"
+        android:layout_below="@id/predicate_add_view"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ff0000"
+        />
+    <net.aixin.app.ui.empty.EmptyLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+</RelativeLayout>

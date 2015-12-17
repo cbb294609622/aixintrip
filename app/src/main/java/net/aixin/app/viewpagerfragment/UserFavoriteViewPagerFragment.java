@@ -1,0 +1,54 @@
+package net.aixin.app.viewpagerfragment;
+
+import net.aixin.app.R;
+import net.aixin.app.adapter.ViewPageFragmentAdapter;
+import net.aixin.app.base.BaseListFragment;
+import net.aixin.app.base.BaseViewPagerFragment;
+import net.aixin.app.bean.Favorite;
+import net.aixin.app.fragment.UserFavoriteFragment;
+import android.os.Bundle;
+import android.view.View;
+
+/**
+ * 用户收藏界面
+ */
+public class UserFavoriteViewPagerFragment extends BaseViewPagerFragment {
+	
+	public static UserFavoriteViewPagerFragment newInstance(){
+		return new UserFavoriteViewPagerFragment();
+	}
+	
+	@Override
+	protected void onSetupTabAdapter(ViewPageFragmentAdapter adapter) {
+
+		String[] title = getResources().getStringArray(R.array.userfavorite);
+		adapter.addTab(title[0], "favorite_software", UserFavoriteFragment.class, getBundle(Favorite.CATALOG_SOFTWARE));
+		adapter.addTab(title[1], "favorite_topic", UserFavoriteFragment.class, getBundle(Favorite.CATALOG_TOPIC));
+		adapter.addTab(title[2], "favorite_code", UserFavoriteFragment.class, getBundle(Favorite.CATALOG_CODE));
+		adapter.addTab(title[3], "favorite_blogs", UserFavoriteFragment.class, getBundle(Favorite.CATALOG_BLOGS));
+		adapter.addTab(title[4], "favorite_news", UserFavoriteFragment.class, getBundle(Favorite.CATALOG_NEWS));
+		
+	}
+	
+	private Bundle getBundle(int favoriteType) {
+		Bundle bundle = new Bundle();
+		bundle.putInt(BaseListFragment.BUNDLE_KEY_CATALOG, favoriteType);
+		return bundle;
+	}
+
+	@Override
+	public void onClick(View v) {
+
+	}
+
+	@Override
+	public void initView(View view) {
+
+	}
+
+	@Override
+	public void initData() {
+
+	}
+
+}
